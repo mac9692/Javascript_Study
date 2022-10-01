@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    let user_name = prompt("성함을 기입하십시오", "");
+    let user_height = prompt("키를 입력하십시오", 165);
+    let user_weight = prompt("몸무게를 기입하십시오", 65);
+
+    let normal_weight = (user_height - 100) * 0.9;
+    let result = user_weight >= normal_weight - 5 && user_weight <= normal_weight + 5;
+    let bool_normal = result ? "It's Fine" : "It's Dangerous";
+
+    document.write(user_name + "님의 건강 상태는 " + bool_normal);
+    document.write("적정 몸무게는 " + (normal_weight - 5) + " 와 " + (normal_weight + 5) + " 사이 입니다.");
+  </script>
+</head>
+<body>
+
+</body>
+</html>
