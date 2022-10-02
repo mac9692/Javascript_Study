@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    let caseVar = prompt("네이버, 다음, 구글 중 제일 좋아하는 사이트는?", "");
+    let url;
+
+    switch (caseVar) {
+      case "구글":
+        url = "www.google.com";
+        break;
+      case "다음":
+        url = "www.daum.net";
+        break;
+      case "네이버":
+        url = "www.naver.com";
+        break;
+      default:
+        alert("보기 중에 선택해주십시오.");
+    }
+
+    if (url) {
+      location.href = "http://" + url;
+    }
+  </script>
+</head>
+<body>
+
+</body>
+</html>
