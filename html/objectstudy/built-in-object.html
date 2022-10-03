@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    let tv = new Object();
+    tv.color = "white";
+    tv.price = 1000;
+    tv.info = function () {
+      document.write("색은 " + tv.color);
+      document.write("가격은 " + tv.price);
+    };
+
+    let car = {
+      color: "black",
+      price: 100000,
+      info: function () {
+        document.write("색은 " + car.color);
+        document.write("가격은 " + car.price);
+      },
+    }
+
+    document.write("<h1> tv 객체 </h1>");
+    tv.info();
+    document.write("<h1> car 객체 </h1>");
+    car.info();
+  </script>
+</head>
+<body>
+
+</body>
+</html>
