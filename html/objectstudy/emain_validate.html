@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    let email = prompt("이메일을 기입해주십시오.", "");
+    let arrUrl = [".com", ".net", ".or.kr"];
+    let boolVal1 = false;
+    let boolVal2 = false;
+
+    if (email.indexOf("@") > 0) {
+      boolVal1 = true;
+    }
+
+    for (i in email) {
+      if (email.indexOf(arrUrl[i]) > 0) {
+        boolVal2 = true;
+      }
+    }
+
+    if (boolVal1 && boolVal2) {
+      document.write(email);
+    } else {
+      alert("이메일 형식이 잘못되었습니다.");
+    }
+  </script>
+</head>
+<body>
+
+</body>
+</html>

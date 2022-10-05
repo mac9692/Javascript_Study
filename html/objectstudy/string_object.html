@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    let userName = prompt("당신의 영문 이름은 ?", "");
+
+    let upperUserName = userName.toUpperCase();
+    document.write(upperUserName, "<br>");
+
+    let userPhoneNumber = prompt("당신의 전화 번호는?", "");
+
+    let resultNumber = userPhoneNumber.substring(0, userPhoneNumber.length - 4) + "****";
+    document.write(resultNumber, "<br>");
+  </script>
+</head>
+<body>
+
+</body>
+</html>
