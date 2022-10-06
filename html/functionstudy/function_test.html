@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Title</title>
   <script>
-    let count = 0;
+    var count = 0;
 
     myFunction();
 
@@ -14,8 +14,9 @@
     }
 
     myFunction();
+    theFunction();
 
-    let theFunction = function () {
+    var theFunction = function () {
       count++;
       document.write("bye" + count, "<br>");
     };
