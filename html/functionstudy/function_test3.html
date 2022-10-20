@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <script>
+    let myFunction = function () {
+      alert("전역 함수");
+    };
+
+    let outerFunction = function () {
+      let myFunction = function () {
+        alert("지역 함수");
+      };
+      myFunction();
+    };
+
+    outerFunction();
+    myFunction();
+  </script>
+</head>
+<body>
+
+</body>
+</html>
