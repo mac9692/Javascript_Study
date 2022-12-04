@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  10진수 : <input type="number" v-model.number="dec">
+  2진수 : <input type="number" v-model.number="binary">
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script type="text/javascript">
+  var vm = new Vue({
+    el: '#app',
+    data() {
+      return {
+        dec: 0,
+        binary: 0,
+      };
+    },
+    watch: {
+      dec: function (val) {
+        this.dec = val;
+        this.binary = parseInt(val.toString(2));
+      },
+
+      binary: function (val) {
+        this.binary = val;
+        this.dec = parseInt(val, 2);
+      },
+    }
+  });
+</script>
+</body>
+</html>

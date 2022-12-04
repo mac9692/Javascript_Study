@@ -9,12 +9,19 @@
 <div id="app">
   <p>{{ message }}</p>
   <button @click="sayHello">확인</button>
+  <h1>========================================</h1>
   <h4>{{ reversedtitle }}</h4>
   <h1>{{ title }}</h1>
   <h2>가격 : {{ price }}</h2>
   <input type="number" v-model="price">
   <h3>공급가액 : {{ supplyAmount.toFixed() }}</h3>
   <h3>부가가치세 : {{ valueAddedTax.toFixed() }}</h3>
+  <h1>========================================</h1>
+  <label>여행하고 싶은 도시 : </label>
+  <input v-model="searchCity" type="text"/>
+  <ul>
+    <li v-for="city in filteredCities">{{ city }}</li>
+  </ul>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script type="text/javascript">
@@ -25,6 +32,8 @@
         message: 'Have a nice day',
         title: '캡틴마블',
         price: 10000,
+        searchCity: '',
+        cities: ['Seoul', 'Paris', 'Seattle', 'Chicago', 'New York', 'Rome'],
       };
     },
     computed: {
@@ -36,6 +45,9 @@
       },
       valueAddedTax: function () {
         return (this.price / 11);
+      },
+      filteredCities() {
+        return this.cities.filter(item => item.match(this.searchCity));
       },
     },
     methods: {
