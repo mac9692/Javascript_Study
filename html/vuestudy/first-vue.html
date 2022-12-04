@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+
+</head>
+<body>
+<div id="app">
+  <p>{{ message }}</p>
+  <button @click="sayHello">확인</button>
+  <h4>{{ reversedtitle }}</h4>
+  <h1>{{ title }}</h1>
+  <h2>가격 : {{ price }}</h2>
+  <input type="number" v-model="price">
+  <h3>공급가액 : {{ supplyAmount.toFixed() }}</h3>
+  <h3>부가가치세 : {{ valueAddedTax.toFixed() }}</h3>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script type="text/javascript">
+  var app = new Vue({
+    el: '#app',
+    data() {
+      return {
+        message: 'Have a nice day',
+        title: '캡틴마블',
+        price: 10000,
+      };
+    },
+    computed: {
+      reversedtitle: function () {
+        return this.title.split('').reverse().join('');
+      },
+      supplyAmount: function () {
+        return (this.price / 11) * 10;
+      },
+      valueAddedTax: function () {
+        return (this.price / 11);
+      },
+    },
+    methods: {
+      sayHello: function () {
+        alert(this.message);
+      },
+    }
+  })
+</script>
+</body>
+</html>
