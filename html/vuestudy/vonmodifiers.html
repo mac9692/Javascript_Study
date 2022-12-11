@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <div id="outer" @click.capture="handleClickEvent">
+    Outer
+    <div id="middle" @click.capture="handleClickEvent">
+      Middle
+      <div id="inner" @click.capture="handleClickEvent">
+        Inner
+      </div>
+    </div>
+  </div>
+  <a href="https://naver.com" target="_blank">네이버로 이동</a>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script type="text/javascript">
+  new Vue({
+    el: '#app',
+    methods: {
+      handleClickEvent($event) {
+        console.log(`handleClickEvent target : ${$event.target.id}` +
+          `     currentTarget : ${$event.currentTarget.id}`);
+      },
+    }
+  })
+</script>
+</body>
+</html>
