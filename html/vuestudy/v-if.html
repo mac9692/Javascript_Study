@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <h3>v-if directive</h3>
+  <p v-if="error">에러 발생</p>
+  <p v-else>에러가 발생하지 않았습니다.</p>
+  <button @click="error = !error">에러 버튼</button>
+  <table>
+    <thead>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>year</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr v-for="item in books" :key="item.id">
+      <th>{{item.id}}</th>
+      <th><a :href="item.url">{{item.name}}</a></th>
+      <th>{{item.year}}</th>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script type="text/javascript">
+  new Vue({
+    el: '#app',
+    data() {
+      return {
+        error: false,
+        books: [
+          {id: 1, name: '박', year: 2002, url: 'https://naver.com'},
+          {id: 2, name: '박', year: 2002, url: 'https://naver.com'},
+          {id: 3, name: '박', year: 2002, url: 'https://naver.com'},
+        ],
+
+      }
+    },
+  })
+</script>
+</body>
+</html>

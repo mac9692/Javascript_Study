@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <label for="name">이름 :</label>
+  <input id="name" type="text" v-model="name">
+
+  <label for="checked">이름 :</label>
+  <input id="checked" type="checkbox" v-model="checked">
+  <p>{{ name }} 영화 보러 갈래요? {{ checked ? '예' : '아니오'}}</p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script type="text/javascript">
+  new Vue({
+    el: '#app',
+    data() {
+      return {
+        checked: false,
+        name: '',
+      }
+    },
+  })
+</script>
+</body>
+</html>
