@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <table>
+    <thead>
+    <tr>
+      <th>번호</th>
+      <th>이름</th>
+      <th>버튼</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr v-for="(item, index) in country" :key="item">
+      <th>{{ index }}</th>
+      <th>{{ item }}</th>
+      <th><button @click="selectCountry(item)">선택</button></th>
+    </tr>
+    </tbody>
+  </table>
+  <h5>{{ message }}</h5>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script type="text/javascript">
+  new Vue({
+    el: '#app',
+
+    data() {
+      return {
+        country: ['한국', '미국', '중국', '영국'],
+        message: '',
+
+      }
+    },
+
+    methods: {
+      selectCountry(country) {
+        this.message = `선택된 도시는 ${country} 입니다!`
+      },
+    },
+
+  })
+</script>
+</body>
+</html>

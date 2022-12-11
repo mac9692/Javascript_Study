@@ -12,18 +12,33 @@
   <label for="checked">이름 :</label>
   <input id="checked" type="checkbox" v-model="checked">
   <p>{{ name }} 영화 보러 갈래요? {{ checked ? '예' : '아니오'}}</p>
+  <p>=====================================================</p>
+  <h5 @click="misae = '미세먼지 없음'">{{ misae }}</h5>
+  <p>=====================================================</p>
+  <h5 @click="handleEvent">{{ info }}</h5>
+  <p>=====================================================</p>
+  <p>=====================================================</p>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script type="text/javascript">
   new Vue({
     el: '#app',
+
     data() {
       return {
         checked: false,
         name: '',
+        misae: '미세먼지 있음',
+        info: '이벤트 정보',
       }
     },
-  })
+
+    methods: {
+      handleEvent($e) {
+        this.info = $e.type;
+      },
+    }
+  });
 </script>
 </body>
 </html>
